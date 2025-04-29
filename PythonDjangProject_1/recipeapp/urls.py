@@ -11,8 +11,15 @@
     settings => 데이터베이스 설정,
 '''
 from django.urls import path
+
 from recipeapp import views
+"""
+    1. models : 데이터베이스 연동
+    2. views : HTML로 전송할 파일 전송
+    3. urls : views가 가지고 있는 함수 호출
+"""
 # @RequestMapping
 urlpatterns=[
-    path('',views.index,name="index")
+    path('',views.index,name="index"),
+    path('recipe_list/',views.recipeList,name="recipe_list")
 ]
