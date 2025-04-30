@@ -1,20 +1,26 @@
-'''
-    django-admin startproject : 장고 프로젝트 생성 명령
-    startapp : 프로젝트의 기능설정
-    migrate : 데이터베이스 설정
-    runserver : 서버구동
-    models.pu = 데이터베이스 연동 (DAO)
-    views.py = 데이터를 HTML전송
-    urls.pu = 화면 이동
-    templete
-    manage.py => 파이썬 명령어 사용시
-    settings => 데이터베이스 설정,
-'''
+"""
+URL configuration for config project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
 from django.contrib import admin
 from django.urls import path,include
 
 import recipeapp
 
-urlpatterns = [
 
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('recipe/',include('recipeapp.urls'))
 ]
