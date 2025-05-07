@@ -5,3 +5,13 @@ import json
 url="https://www.kobis.or.kr/kobis/business/main/searchMainDailyBoxOffice.do"
 text_data=req.urlopen(url).read().decode("UTF-8")
 print(text_data)
+json_data=json.loads(text_data)
+for movie in json_data:
+    print("영화제목:"+movie['movieNm'])
+    print("상영일:"+movie['startDate'])
+    print("장르:"+movie['genre'])
+    print("등급:"+movie['watchGradeNm'])
+    print("상영시간"+movie['showTm'])
+    print("순위:"+str(movie['rank']))
+    print("줄거리:"+movie['synop'])
+
